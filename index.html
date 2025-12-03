@@ -12,6 +12,7 @@
       padding: 0;
       color: #333;
     }
+
     header {
       background-color: #010978;
       color: white;
@@ -22,6 +23,7 @@
       margin: 0;
       font-size: 2.4em;
     }
+
     .content {
       display: flex;
       justify-content: center;
@@ -31,10 +33,12 @@
       flex-wrap: wrap;
       flex-direction: row-reverse;
     }
+
     .section {
       max-width: 320px;
       text-align: center;
     }
+
     .section img {
       width: 100%;
       max-width: 280px;
@@ -43,22 +47,33 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       margin-bottom: 10px;
+      border: 2px solid white;
     }
-    .debug-box {
-      width: 100%;
-      height: 4px;
-      background-color: red;
-      margin-bottom: 20px;
-    }
-    .section h2 {
-      margin-top: 10px;
-      font-size: 1.3em;
+
+    /* Titles - Dark Blue, No Shadow */
+    .title-blue {
+      font-size: 1.5em;
       color: #010978;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
-    .section p {
-      font-size: 0.95em;
+
+    .book-title-blue {
+      font-size: 1.4em;
+      color: #010978;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Descriptions - Larger Font + Soft Shadow */
+    .desc-shadow {
+      color: #ffffff;
+      font-size: 1.15em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.85);
       line-height: 1.5;
+      margin-top: 10px;
     }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -76,119 +91,100 @@
         gap: 30px;
         flex-direction: column;
       }
-      .section p {
-        font-size: 0.9em;
-      }
     }
-  
-    .checkout-text {
-      color: white;text-shadow: text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85)
-    }
-    .info-text {
-      color: #010978;
-    }
-
-  .content .section .checkout-text {
-	color: #FFF;
-}
-  .content .section p {
-	color: #010986;
-}
-  .content1 {      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 40px 20px;
-      gap: 50px;
-      flex-wrap: wrap;
-      flex-direction: row-reverse;
-}
-  .content .section p .content1 {
-	color: #FFF;
-}
-  .content .section h1 .content1 {
-	color: #FFF;
-}
-  .content .section h1 {
-	color: #FFF;
-}
   </style>
-  
+
   <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-  
 </head>
+
 <body>
 
-  <header>
- 
- 
- 
- <h1>
-  <img src="images/logo.png" width="200" height="200" style="vertical-align: middle; margin-right: 10px;">
-  BogertBooks.com
-</h1>
+<header>
+  <h1>
+    <img src="images/logo.png" width="200" height="200" style="vertical-align: middle; margin-right: 10px;">
+    BogertBooks.com
+  </h1>
+  <p style="font-size: 1.5em;">Discover the world of faith-driven fiction by T.J. Bogert</p>
+</header>
 
-    <p style="font-size: 1.5em;">Discover the world of faith-driven fiction by T.J. Bogert</p>
+<div class="content">
 
-  </header>
+  <!-- BUY NOW SECTION -->
+  <div class="section" style="display: flex; flex-direction: column; align-items: center;">
+    <h1 style="margin-bottom: 10px; font-size: 1.8em; color: #fff;">Buy Now</h1>
 
-  <div class="content">
-  
-  
-<div class="section" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-  <h1 style="margin-bottom: 10px; font-size: 1.8em;">Buy Now</h1>
+    <!-- Ebook -->
+    <a href="https://payhip.com/b/LRGEJ" target="_blank">
+      <button style="padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border: 2px solid #ffffff; border-radius: 6px; cursor: pointer;">
+        Ebook – $7.99
+      </button>
+    </a>
 
-  <a href="https://payhip.com/b/LRGEJ" target="_blank" style="text-decoration: none;">
-    <button style="padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border: 2px solid #ffffff; border-radius: 6px; cursor: pointer;">
-      Ebook – $7.99
-    </button>
-  </a>
+    <!-- Audio -->
+    <a href="https://payhip.com/b/MaTei" target="_blank">
+      <button style="margin-top: 10px; padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border: 2px solid #ffffff; border-radius: 6px; cursor: pointer;">
+        Audio – $9.99
+      </button>
+    </a>
 
-  <a href="https://payhip.com/b/MaTei" target="_blank" style="text-decoration: none;">
-    <button style="margin-top: 10px; padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border: 2px solid #ffffff; border-radius: 6px; cursor: pointer;">
-      Audio – $9.99
-    </button>
-  </a>
+    <!-- Payhip checkout note -->
+    <h2 style="margin-top: 20px; color: white; font-size: 1.1em;">
+      Secure checkout powered by Payhip – choose PayPal or any major credit/debit card.
+    </h2>
 
-  <h2 class="checkout-text" style="margin-top: 20px;">Secure checkout powered by Payhip – choose PayPal or any major credit/debit card.</h2>
+    <!-- AMAZON BUTTON (Two-Line, 230px wide) -->
+    <a href="https://www.amazon.com/dp/B0G4SXRTPP" target="_blank" style="text-decoration: none;">
+      <button style="
+        margin-top: 20px;
+        padding: 12px;
+        width: 230px;
+        background-color: #FF9900;
+        color: #111;
+        border: 2px solid #b36b00;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      ">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Amazon_logo.svg"
+             alt="Amazon" style="height: 22px;">
+        <span style="font-size: 1.2em;">Paperback – $9.99</span>
+      </button>
+    </a>
+  </div>
+
+  <!-- BOOK COVER -->
+  <div class="section">
+    <img src="images/cover.jpg" alt="Storm Over the Pacific">
+
+    <h2 class="book-title-blue">Storm Over the Pacific</h2>
+
+    <div class="desc-shadow">
+      A powerful novel of war, faith, and redemption.
+      <em>Storm Over the Pacific</em> delivers intensity, heart, and reflection in equal measure.
+    </div>
+  </div>
+
+  <!-- AUTHOR -->
+  <div class="section">
+    <img src="images/Tim.jpg" alt="Author T.J. Bogert">
+
+    <h2 class="title-blue">T.J. Bogert</h2>
+
+    <div class="desc-shadow">
+      Writing from the heart, T.J. Bogert brings characters to life through the lens of conviction,
+      conflict, and hope. His work weaves spiritual depth into real human struggle.
+    </div>
+  </div>
+
 </div>
 
-
-
-<div class="section">
-
-
-
-      <img src="images/cover.jpg" alt="Storm Over the Pacific book cover"style="border: 2px solid #ffffff; border-radius: 6px;">
-    <div class="debug-box"></div>
-    
-    <h2 class="info-text" style="font-size: 1.4em; color: #ffffff; line-height: 1.6; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85);">Storm Over the Pacific</h2>
-      <h2 align="center">
-      A powerful novel of war, faith, and redemption. <em>Storm Over the Pacific</em> delivers intensity, heart, and reflection in equal measure. </h2>
-    
-    
-    </div>
-    <div class="section">
-      <img src="images/Tim.jpg" alt="Author T.J. Bogert"style="border: 2px solid #ffffff; border-radius: 6px;">
-      <div class="debug-box"></div>
-     
-     
-   <h2 class="info-text" style="font-size: 1.5em; color: #ffffff; line-height: 1.6; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85);">
-  T.J. Bogert
-</h2>
-
-      
-      
-      <h2 align="justify">
-        Writing from the heart, T.J. Bogert brings characters to life through the lens of conviction, conflict, and hope. His work weaves together spiritual themes with real human struggles.
-      </h2>
-      <div align="left"></div>
-    </div>
-</div>
-  
-
-
-  <footer>
-  &copy; 2025 BogertBooks.com &nbsp;</footer>
+<footer>
+  &copy; 2025 BogertBooks.com
+</footer>
 
 </body>
 </html>
