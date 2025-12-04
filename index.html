@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Storm Over the Pacific – BogertBooks.com</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom, #010978 30%, #edf3fd 100%);
       margin: 0;
       padding: 0;
-      color: #333;
     }
 
     header {
       background-color: #010978;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
     }
+
     header h1 {
       margin: 0;
       font-size: 2.4em;
@@ -28,9 +29,9 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 40px 20px;
-      gap: 50px;
       flex-wrap: wrap;
+      gap: 50px;
+      padding: 40px 20px;
       flex-direction: row-reverse;
     }
 
@@ -45,25 +46,21 @@
       height: 420px;
       object-fit: cover;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      margin-bottom: 10px;
       border: 2px solid white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 10px;
     }
 
-    /* TITLE STYLE — match screenshot #2  */
     .title-white {
       font-size: 1.6em;
       font-weight: bold;
       color: #ffffff;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.85);
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin: 10px 0;
     }
 
-    /* DESCRIPTIONS — dark blue, no shadow */
     .desc-main {
-      font-size: 1.2em;
-      font-weight: bold
+      font-size: 1.1em;
       color: #010978;
       line-height: 1.5;
       text-align: justify;
@@ -71,33 +68,32 @@
     }
 
     footer {
+      background-color: #e2e8f0;
       text-align: center;
       padding: 20px;
-      background-color: #e2e8f0;
-      color: #555;
       font-size: 0.9em;
+      color: #555;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.6em;
+        font-size: 1.7em;
       }
       .content {
-        padding: 20px 10px;
-        gap: 30px;
         flex-direction: column;
+        padding: 20px 10px;
       }
     }
   </style>
 
-  <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+  <script src="https://payhip.com/payhip.js" type="text/javascript"></script>
 </head>
 
 <body>
 
 <header>
   <h1>
-    <img src="images/logo.png" width="200" height="200" style="vertical-align: middle; margin-right: 10px;">
+    <img src="images/logo.png" width="200" height="200" style="vertical-align: middle; margin-right: 10px;" />
     BogertBooks.com
   </h1>
   <p style="font-size: 1.5em;">Discover the world of faith-driven fiction by T.J. Bogert</p>
@@ -105,65 +101,69 @@
 
 <div class="content">
 
-  <!-- BUY NOW SECTION -->
+  <!-- BUY NOW SIDEBAR -->
   <div class="section" style="display: flex; flex-direction: column; align-items: center;">
-    <h1 style="margin-bottom: 10px; font-size: 1.8em; color: #fff;">Buy Now</h1>
+    <h1 style="margin-bottom: 10px; font-size: 1.8em; color: white;">Buy Now</h1>
 
     <!-- Ebook -->
     <a href="https://payhip.com/b/LRGEJ" target="_blank">
-      <button style="padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border: 2px solid #ffffff; border-radius: 6px; cursor: pointer;">
+      <button style="padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border-radius: 6px; border: 2px solid white; cursor: pointer;">
         Ebook – $6.99
       </button>
     </a>
 
     <!-- Audio -->
     <a href="https://payhip.com/b/MaTei" target="_blank">
-      <button style="margin-top: 10px; padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border: 2px solid #ffffff; border-radius: 6px; cursor: pointer;">
+      <button style="margin-top: 10px; padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border-radius: 6px; border: 2px solid white; cursor: pointer;">
         Audio – $9.99
       </button>
     </a>
 
-    <!-- Payhip checkout note -->
+    <!-- Payhip Note -->
     <h2 style="margin-top: 20px; color: white; font-size: 1.1em;">
       Secure checkout powered by Payhip – choose PayPal or any major credit/debit card.
     </h2>
 
-    <!-- AMAZON BUTTON -->
-    <a href="https://www.amazon.com/dp/B0G4SXRTPP" target="_blank" style="text-decoration: none;">
-      <img src="amazon.png" alt="Buy Paperback on Amazon - $9.99" width="235" height="64" style="
-        margin-top: 20px;
-        width: 225px;
-        height: auto;
-        cursor: pointer;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        transition: transform 0.2s;
-      " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <!-- AMAZON BUTTON - Option 3 (Width + Height set) -->
+    <a href="https://www.amazon.com/dp/B0G4SXRTPP" target="_blank">
+      <img src="images/amazon.png"
+           alt="Buy Paperback on Amazon - $9.99"
+           style="
+             width: 225px;
+             height: 65px;
+             object-fit: contain;
+             margin-top: 20px;
+             cursor: pointer;
+             border-radius: 10px;
+             box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+             transition: transform 0.2s;
+           "
+           onmouseover="this.style.transform='scale(1.05)'"
+           onmouseout="this.style.transform='scale(1)'">
     </a>
+
   </div>
 
-  <!-- BOOK COVER -->
+  <!-- BOOK SECTION -->
   <div class="section">
-    <img src="images/cover.jpg" alt="Storm Over the Pacific">
-
+    <img src="images/cover.jpg" alt="Storm Over the Pacific" />
     <h2 class="title-white">Storm Over the Pacific</h2>
 
-    <div class="desc-main">
+    <p class="desc-main">
       A powerful novel of war, faith, and redemption.
       <em>Storm Over the Pacific</em> delivers intensity, heart, and reflection in equal measure.
-    </div>
+    </p>
   </div>
 
-  <!-- AUTHOR -->
+  <!-- AUTHOR SECTION -->
   <div class="section">
-    <img src="images/Tim.jpg" alt="Author T.J. Bogert">
-
+    <img src="images/Tim.jpg" alt="T.J. Bogert" />
     <h2 class="title-white">T.J. Bogert</h2>
 
-    <div class="desc-main">
+    <p class="desc-main">
       Writing from the heart, T.J. Bogert brings characters to life through the lens of conviction,
       conflict, and hope. His work weaves spiritual depth into real human struggle.
-    </div>
+    </p>
   </div>
 
 </div>
