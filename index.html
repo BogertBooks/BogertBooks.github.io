@@ -125,26 +125,26 @@
     </h2>
 
     <!-- AMAZON BUTTON - Option 3 (Width + Height set) -->
-    <a href="https://www.amazon.com/dp/B0G4SXRTPP" target="_blank">
+<a href="https://www.amazon.com/dp/B0G4SXRTPP" target="_blank">
   <img src="images/amazon.png"
        alt="Buy Paperback on Amazon - $9.99"
        style="
          width: 225px;
-         height: 65px;
+         height: auto;    /* ← LET THE PNG DECIDE HEIGHT */
          object-fit: contain;
          margin-top: 20px;
 
-         /* THE FIX → border on the image itself */
-         border: 3px solid white;
-         border-radius: 12px;
+         /* REMOVE ALL BORDERS HERE */
+         border: none;        
+         border-radius: 0px;  /* ← ENSURE NO ROUNDING */
 
-         box-shadow: 0 3px 8px rgba(0,0,0,0.25);
          cursor: pointer;
          transition: transform 0.2s;
        "
        onmouseover="this.style.transform='scale(1.05)'"
        onmouseout="this.style.transform='scale(1)'">
 </a>
+
 
   </div>
 
