@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Storm Over the Pacific – BogertBooks.com</title>
+  <title>BogertBooks.com – Novels by T.J. Bogert</title>
 
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #010978 30%, #edf3fd 100%);
+      background-color: #010978;
       margin: 0;
       padding: 0;
     }
@@ -17,33 +17,52 @@
       background-color: #010978;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.4em;
+      font-size: 2em;
     }
 
+    header img {
+      vertical-align: middle;
+      margin-right: 10px;
+      width: 90px;
+      height: 90px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      margin: 8px 0 0 0;
+    }
+
+    /* Layout: fixed author sidebar + vertically scrolling book list */
     .content {
       display: flex;
-      justify-content: center;
       align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 50px;
-      padding: 40px 20px;
-      flex-direction: row-reverse;
+      gap: 40px;
+      padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 190px;
     }
 
     .section {
-      max-width: 320px;
+      max-width: 300px;
       text-align: center;
     }
 
     .section img {
       width: 100%;
-      max-width: 280px;
-      height: 420px;
+      max-width: 260px;
+      height: 380px;
       object-fit: cover;
       border-radius: 8px;
       border: 2px solid white;
@@ -52,7 +71,7 @@
     }
 
     .title-white {
-      font-size: 1.6em;
+      font-size: 1.5em;
       font-weight: bold;
       color: #ffffff;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.85);
@@ -60,11 +79,102 @@
     }
 
     .desc-main {
-      font-size: 1.1em;
-      color: #010978;
-      line-height: 1.5;
+      font-size: 1.05em;
+      color: #ffffff;
+      line-height: 1.4;
       text-align: justify;
-      margin-top: 10px;
+      margin-top: 8px;
+    }
+
+    /* AUTHOR — fixed sidebar under the fixed header */
+    .author-section {
+      flex: 0 0 300px;
+      position: sticky;
+      top: 190px;
+    }
+
+    /* BOOK LIST — normal vertical page scroll */
+    .book-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      min-width: 0;
+    }
+
+    /* Each card: image+description on the left, buy buttons on the right */
+    .book-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .book-info {
+      flex: 0 0 240px;
+      text-align: center;
+    }
+
+    .book-info img {
+      width: 100%;
+      max-width: 220px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 10px;
+    }
+
+    .buy-buttons {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 10px;
+    }
+
+    .buy-direct-heading {
+      color: #ffffff;
+      font-size: 1.2em;
+      margin: 0 0 10px 0;
+    }
+
+    .buy-btn {
+      padding: 12px 24px;
+      font-size: 1.3em;
+      background-color: green;
+      color: white;
+      border-radius: 6px;
+      border: 2px solid white;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .payhip-note {
+      margin: 6px 0 14px 0;
+      color: white;
+      font-size: 0.9em;
+      max-width: 300px;
+    }
+
+    .amazon-btn {
+      width: 200px;
+      height: auto;
+      object-fit: contain;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .amazon-btn:hover {
+      transform: scale(1.05);
     }
 
     footer {
@@ -75,13 +185,30 @@
       color: #555;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       header h1 {
-        font-size: 1.7em;
+        font-size: 1.5em;
+      }
+      header img {
+        width: 60px;
+        height: 60px;
       }
       .content {
         flex-direction: column;
-        padding: 20px 10px;
+        padding-top: 210px;
+      }
+      .author-section {
+        position: static;
+        flex: none;
+        margin: 0 auto;
+      }
+      .book-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .buy-buttons {
+        align-items: center;
       }
     }
   </style>
@@ -93,74 +220,16 @@
 
 <header>
   <h1>
-    <img src="images/logo.png" width="200" height="200" style="vertical-align: middle; margin-right: 10px;" />
+    <img src="images/logo.png" alt="BogertBooks logo" />
     BogertBooks.com
   </h1>
-  <p style="font-size: 1.5em;">Discover the world of faith-driven fiction by T.J. Bogert</p>
+  <p>Discover the world of faith-driven fiction by T.J. Bogert</p>
 </header>
 
 <div class="content">
 
-  <!-- BUY NOW SIDEBAR -->
-  <div class="section" style="display: flex; flex-direction: column; align-items: center;">
-    <h1 style="margin-bottom: 10px; font-size: 1.8em; color: white;">Buy Direct</h1>
-
-    <!-- Ebook -->
-    <a href="https://payhip.com/b/LRGEJ" target="_blank">
-      <button style="padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border-radius: 6px; border: 2px solid white; cursor: pointer;">
-        Ebook – $6.99
-      </button>
-    </a>
-
-    <!-- Audio -->
-    <a href="https://payhip.com/b/MaTei" target="_blank">
-      <button style="margin-top: 10px; padding: 12px 24px; font-size: 1.5em; background-color: green; color: white; border-radius: 6px; border: 2px solid white; cursor: pointer;">
-        Audio – $9.99
-      </button>
-    </a>
-
-    <!-- Payhip Note -->
-    <h2 style="margin-top: 20px; color: white; font-size: 1.1em;">
-      Secure checkout powered by Payhip – choose PayPal or any major credit/debit card.
-    </h2>
-
-    <!-- AMAZON BUTTON - Option 3 (Width + Height set) -->
-<a href="https://www.amazon.com/dp/B0G4SXRTPP" target="_blank">
-  <img src="images/amazon.png"
-       alt="Buy Paperback on Amazon - $9.99"
-       style="
-         width: 225px;
-         height: auto;    /* ← LET THE PNG DECIDE HEIGHT */
-         object-fit: contain;
-         margin-top: 20px;
-
-         /* REMOVE ALL BORDERS HERE */
-         border: none;        
-         border-radius: 0px;  /* ← ENSURE NO ROUNDING */
-
-         cursor: pointer;
-         transition: transform 0.2s;
-       "
-       onmouseover="this.style.transform='scale(1.05)'"
-       onmouseout="this.style.transform='scale(1)'">
-</a>
-
-
-  </div>
-
-  <!-- BOOK SECTION -->
-  <div class="section">
-    <img src="images/cover.jpg" alt="Storm Over the Pacific" />
-    <h2 class="title-white">Storm Over the Pacific</h2>
-
-    <p class="desc-main">
-      A powerful novel of war, faith, and redemption.
-      <em>Storm Over the Pacific</em> delivers intensity, heart, and reflection in equal measure.
-    </p>
-  </div>
-
-  <!-- AUTHOR SECTION -->
-  <div class="section">
+  <!-- AUTHOR SECTION (fixed sidebar, stays put while book list scrolls) -->
+  <div class="section author-section">
     <img src="images/Tim.jpg" alt="T.J. Bogert" />
     <h2 class="title-white">T.J. Bogert</h2>
 
@@ -168,6 +237,67 @@
       Writing from the heart, T.J. Bogert brings characters to life through the lens of conviction,
       conflict, and hope. His work weaves spiritual depth into real human struggle.
     </p>
+  </div>
+
+  <!-- BOOK LIST (scrolls vertically with the page; add more cards below as needed) -->
+  <div class="book-list">
+
+    <!-- BOOK 1: Storm Over the Pacific -->
+    <div class="book-card">
+      <div class="book-info">
+        <img src="images/cover1.jpg" alt="Storm Over the Pacific" />
+        <h2 class="title-white">Storm Over the Pacific</h2>
+        <p class="desc-main">
+          A powerful novel of war, faith, and redemption.
+          <em>Storm Over the Pacific</em> delivers intensity, heart, and reflection in equal measure.
+        </p>
+      </div>
+
+      <div class="buy-buttons">
+        <h3 class="buy-direct-heading">Buy Direct</h3>
+        <a href="https://payhip.com/b/LRGEJ" target="_blank">
+          <button class="buy-btn">Ebook – $6.99</button>
+        </a>
+        <a href="https://payhip.com/b/MaTei" target="_blank">
+          <button class="buy-btn">Audio – $9.99</button>
+        </a>
+        <p class="payhip-note">Secure checkout powered by Payhip – choose PayPal or any major credit/debit card.</p>
+        <a href="https://www.amazon.com/dp/B0G4SXRTPP" target="_blank">
+          <img class="amazon-btn" src="images/amazon.png" alt="Buy on Amazon">
+        </a>
+      </div>
+    </div>
+
+    <!-- BOOK 2: Mayday Over The Pacific -->
+    <div class="book-card">
+      <div class="book-info">
+        <img src="images/cover2.jpg" alt="Mayday Over The Pacific" />
+        <h2 class="title-white">Mayday Over The Pacific</h2>
+        <p class="desc-main">
+          When a missile strikes Air Force One over the Pacific, the President's desperate escape ignites a crisis
+          that reaches from the White House across international borders. Mayday Over the Pacific is a fast-moving
+          story of conspiracy, danger, redemption, and faith—where lives collide, loyalties are tested, and survival
+          ultimately comes down to whom you trust.
+        </p>
+      </div>
+
+      <div class="buy-buttons">
+        <h3 class="buy-direct-heading">Buy Direct</h3>
+        <a href="https://payhip.com/b/BIzjY" target="_blank">
+          <button class="buy-btn">Ebook – $6.99</button>
+        </a>
+        <a href="https://payhip.com/b/bQmj8" target="_blank">
+          <button class="buy-btn">Audio – $9.99</button>
+        </a>
+        <p class="payhip-note">Secure checkout powered by Payhip – choose PayPal or any major credit/debit card.</p>
+        <a href="https://www.amazon.com/dp/B0HDVJMNJ5" target="_blank">
+          <img class="amazon-btn" src="images/amazon.png" alt="Buy on Amazon">
+        </a>
+      </div>
+    </div>
+
+    <!-- Add BOOK 3, 4, etc. here as more .book-card blocks -->
+
   </div>
 
 </div>
